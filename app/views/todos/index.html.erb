@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <% @todos.each_slice(3) do |row| %>
+      <% row.each do |todos| %>
+        <div class="col">
+          <div class="card">
+            <%= image_tag todos.photo, class: 'img-fluid' %>
+            <h4><%= todos.name %></h4>
+            <% unless todos.done?(current_user) %>
+              <%= link_to 'Terminar', todo_checklists_path(todos), class: 'btn btn-primary', method: :post %>
+            <% else %>
+              <%= link_to "Tarea Terminada","#", class:'btn btn-secondary' %>
+            <% end %>
+           <%= link_to "Detalles", todos , class:'btn btn-dark' %>
+          </div>
+        </div>
+      <% end %>
+      <div class="w-100"></div>
+    <% end %>
+  </div>
+</div>

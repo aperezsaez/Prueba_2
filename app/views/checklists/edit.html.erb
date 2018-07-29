@@ -1,0 +1,9 @@
+<div class="container">
+  <%= form_with model: @checklist, local: true do |form| %>
+    <div class="form-group">
+      <%= form.label :done, "Completado" %>
+      <%= form.check_box :done, class:'form-control' %>
+    </div>
+    <%= form.submit "Enviar", class:'btn btn-default' %>
+  <% end %>
+</div>

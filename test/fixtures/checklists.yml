@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  done: false
+  user: one
+  todo: one
+
+two:
+  done: false
+  user: two
+  todo: two

@@ -1,0 +1,22 @@
+<div class="container">
+  <h3><%="Ususarios que han completado #{@todo.name}" %> </h3>
+  <ul>
+  <% @todo.users.each do |u| %>
+      <li><%= u.email %></li>
+  <% end %>
+  </ul>
+</div>
+  <div class="container">
+    <h4><%="Primeros 5 Usuarios en completar #{@todo.name}"%></h4>
+    <ul><% @todo.users.order('created_at ASC').limit(5).each do |u| %>
+      <li class="row">
+        <div class="col">
+          <p><%= u.email %></p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="container">
+    <%= link_to  "Volver", todos_path, class:'btn btn-secondary' %>  
+  </div>

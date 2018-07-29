@@ -1,0 +1,9 @@
+<div class="container">
+  <%= form_with model: @check, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :done, "Completado" %>
+      <%= f.check_box :done, class:'form-control' %>
+    </div>
+    <%= f.submit 'Enviar', class:'btn btn-default' %>
+  <% end %>
+</div>
