@@ -1,9 +1,14 @@
 <div class="container">
-  <%= form_with model: @check, local: true do |f| %>
-    <div class="form-group">
-      <%= f.label :done, "Completado" %>
-      <%= f.check_box :done, class:'form-control' %>
-    </div>
-    <%= f.submit 'Enviar', class:'btn btn-default' %>
-  <% end %>
+  <div class="row">
+    <% @checklist.each_slice(3) do |row| %>
+      <% row.each do |s| %>
+        <div class="col-md-4">
+          <%= image_tag s.todo.photo, class: 'img-fluid' %>
+          <h4><%= s.todo.name %></h4>
+        </div>
+      <% end %>
+      <div class="w-100"></div>
+    <% end %>
+  </div>
+  <%= link_to 'Volver', root_path, class: 'btn btn-primary' %>
 </div>

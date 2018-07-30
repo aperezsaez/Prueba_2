@@ -26,7 +26,7 @@ class ChecklistsController < ApplicationController
 
   def update
     @checklist = checklist.find(params[:id])
-    @checklist.update(status_params)
+    @checklist.update(checklists_params)
     redirect_to root_path
   end
 
@@ -34,11 +34,11 @@ class ChecklistsController < ApplicationController
     @checklist = checklist.find(params[:id])
     @checklist.checklist = true
     @checklist.save
-    redirect_to statuses_path
+    redirect_to checklists_path
   end
 
   private
-  
+
   def checklist_params
     params.require(:done).permit(:done)
   end
