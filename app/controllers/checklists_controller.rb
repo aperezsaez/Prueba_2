@@ -16,7 +16,7 @@ class ChecklistsController < ApplicationController
     if @checklist.save
       redirect_to root_path, notice: 'Has completado esta tarea'
     else
-      redirect_to root_path, alert: 'No se ha podido marcar como completada esta tarea'
+      redirect_to root_path, alert: 'No has podido completar la tarea' 
     end
   end
 
