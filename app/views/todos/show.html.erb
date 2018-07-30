@@ -1,17 +1,17 @@
 <div class="container">
   <h3><%="Ususarios que han completado #{@todo.name}" %> </h3>
   <ul>
-  <% @todo.users.each do |u| %>
-      <li><%= u.email %></li>
+  <% @todo.users.each do |i| %>
+      <li><%= i.email %></li>
   <% end %>
   </ul>
 </div>
   <div class="container">
     <h4><%="Primeros 5 Usuarios en completar #{@todo.name}"%></h4>
-    <ul><% @todo.users.order('created_at ASC').limit(5).each do |u| %>
+    <ul><% @todo.users.order('created_at ASC').limit(5).each do |i| %>
       <li class="row">
         <div class="col">
-          <p><%= u.email %></p>
+          <p><%= i.email %></p>
         </div>
       </li>
       <% end %>
